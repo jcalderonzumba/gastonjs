@@ -28,6 +28,25 @@ This command is a JSON body that has the following schema:
 }
 ```
 
+##API response
+* Successful command execution has an **HTTP 200 status code** and a body:
+```json
+{
+  "response":{
+    OBJECT_DEPENDS_ON_THE_COMMAND
+    }
+}
+```
+* Error while executing command has an **HTTP 500 status code** and a body:
+```json
+{
+  "error": {
+      "name": "GastonJSExceptionClass",
+      "args": "ExceptionClassArguments"
+    }
+}
+```
+
 ##API request example
 The following example will teach you how to visit a page and save the rendered page:
 

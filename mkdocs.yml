@@ -1,5 +1,13 @@
 site_name: GastonJS Documentation
 pages:
-  - Home: index.md
-  - PHP client: clients/php/index.md
-  - API : api/index.md
+  - GastonJS intro: index.md
+  - GastonJS PHP client: clients/php/index.md
+  - GastonJS API :
+    - 'Introduction': api/index.md
+    - 'Available commands': api/command-list.md
+    - 'Commands' :
+      - 'visit': api/commands/visit.md
+      - 'current_url': api/commands/current_url.md
+      - 'reload': api/commands/reload.md
+      - 'go_back': api/commands/go_back.md
+      - 'go_forward': api/commands/go_forward.md
