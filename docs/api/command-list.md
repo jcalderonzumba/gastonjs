@@ -1,6 +1,6 @@
 GastonJS API browser commands
 =============================
-* add_extension
+* [add_extension](commands/javascript/add_extension.md) --> unit test
 * [add_header](commands/headers/add_header.md)   --> unit test
 * [add_headers](commands/headers/add_headers.md) --> unit test
 * all_html
@@ -23,8 +23,8 @@ GastonJS API browser commands
 * double_click
 * drag
 * equals
-* evaluate
-* execute
+* [evaluate](commands/javascript/evaluate.md) --> unit test
+* [execute](commands/javascript/execute.md) --> unit test
 * exit
 * find
 * find_within
@@ -62,7 +62,7 @@ GastonJS API browser commands
 * set_debug
 * [set_headers](commands/headers/set_headers.md)  --> unit test
 * set_http_auth
-* set_js_errors
+* [set_js_errors](commands/javascript/set_js_errors.md) --> NO unit test
 * set_paper_size
 * set_url_blacklist
 * set_zoom_factor
