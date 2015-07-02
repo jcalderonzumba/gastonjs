@@ -16,4 +16,9 @@ pages:
       - 'set_headers': api/commands/headers/set_headers.md
       - 'add_headers': api/commands/headers/add_headers.md
       - 'add_header': api/commands/headers/add_header.md
+    - 'Javascript commands' :
+      - 'add_extension': api/commands/javascript/add_extension.md
+      - 'execute': api/commands/javascript/execute.md
+      - 'evaluate': api/commands/javascript/evaluate.md
+      - 'set_js_errors': api/commands/javascript/set_js_errors.md
   - GastonJS PHP client: clients/php/index.md
