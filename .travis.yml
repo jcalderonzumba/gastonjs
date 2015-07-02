@@ -1,0 +1,22 @@
+language: php
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+before_script:
+  - composer self-update
+  - composer install --no-interaction
+  - mkdir -p /tmp/jcalderonzumba/phantomjs
+
+script:
+  - bin/run-tests.sh
+
+after_script:
+  - ps axo pid,command | grep phantomjs | grep -v grep | awk '{print $1}' | xargs -I {} kill {}
+  - ps axo pid,command | grep php | grep -v grep | awk '{print $1}' | xargs -I {} kill {}
