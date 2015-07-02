@@ -1,13 +1,19 @@
 site_name: GastonJS Documentation
 pages:
-  - GastonJS intro: index.md
-  - GastonJS PHP client: clients/php/index.md
+  - GastonJS introduction: index.md
   - GastonJS API :
     - 'Introduction': api/index.md
     - 'Available commands': api/command-list.md
-    - 'Commands' :
+    - 'Navigation commands':
       - 'visit': api/commands/visit.md
       - 'current_url': api/commands/current_url.md
       - 'reload': api/commands/reload.md
       - 'go_back': api/commands/go_back.md
       - 'go_forward': api/commands/go_forward.md
+    - 'Header commands' :
+      - 'get_headers': api/commands/headers/get_headers.md
+      - 'response_headers': api/commands/headers/response_headers.md
+      - 'set_headers': api/commands/headers/set_headers.md
+      - 'add_headers': api/commands/headers/add_headers.md
+      - 'add_header': api/commands/headers/add_header.md
+  - GastonJS PHP client: clients/php/index.md

@@ -59,3 +59,6 @@ curl -X POST -H "Content-Type: application/json" -d '{"name":"visit","args":["ht
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"name":"render","args":["/tmp/google.png", true]}' 'http://127.0.0.1:8510/v1/api'
 ```
+
+##Full API command documentation
+* [API commands list](command-list.md)
