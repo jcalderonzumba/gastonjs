@@ -1,16 +1,15 @@
 {
-  "name": "jcalderonzumba/mink-phantomjs-driver",
-  "description": "PhantomJS driver for Mink framework",
+  "name": "jcalderonzumba/gastonjs",
+  "description": "PhantomJS API based server for webpage automation",
   "keywords": [
     "phantomjs",
     "headless",
-    "javascript",
-    "ajax",
-    "testing",
+    "api",
+    "automation",
     "browser"
   ],
-  "homepage": "http://mink.behat.org/",
-  "type": "mink-driver",
+  "homepage": "https://github.com/jcalderonzumba/gastonjs",
+  "type": "phantomjs-api",
   "license": "MIT",
   "authors": [
     {
@@ -20,10 +19,7 @@
     }
   ],
   "require": {
-    "php": ">=5.3.1",
-    "behat/mink": "~1.6",
-    "behat/mink-extension": "~2.0@dev",
-    "twig/twig": "~1.0",
+    "php": ">=5.3",
     "guzzlehttp/guzzle": "~5.0"
   },
   "require-dev": {
@@ -36,15 +32,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Zumba\\PhantomJSExtension\\": "src/extension",
-      "Zumba\\GastonJS\\": "src/gastonjs",
-      "Zumba\\Mink\\Driver\\": "src/driver"
+      "Zumba\\GastonJS\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Zumba\\GastonJS\\Tests\\": "tests/unit",
-      "Behat\\Mink\\Tests\\Driver\\": "tests/integration"
+      "Zumba\\GastonJS\\Tests\\": "tests/unit"
     }
   },
   "extra": {
