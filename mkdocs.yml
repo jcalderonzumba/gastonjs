@@ -1,0 +1,5 @@
+site_name: GastonJS Documentation
+pages:
+  - Home: index.md
+  - PHP client: clients/php/index.md
+  - API : api/index.md
