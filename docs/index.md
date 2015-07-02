@@ -20,10 +20,10 @@ composer require jcalderonzumba/gastonjs
 Everything will be installed inside `vendor` folder, as with any composer package you can start using it by including the autoloading script in your PHP project.
 
 ## Learn to control the Browser
-* [PHP GastonJS Client](/clients/php/)
-* [GastonJS API](/api/)
+* [GastonJS API](api/index.md)
+* [PHP GastonJS Client](clients/php/index.md)
 
 ## Special thanks
-None of this work would have been possible without the awesome work done by [Poltergeist](https://github.com/teampoltergeist/poltergeist).
+None of this work would have been possible without the awesome work done by the [Poltergeist team](https://github.com/teampoltergeist/poltergeist).
 
 We fork their code and took it to another level, but the roots are stille there and we want to acknowledge that.
