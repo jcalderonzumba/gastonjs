@@ -1125,6 +1125,7 @@ Poltergeist.Browser = (function () {
    * @return {*}
    */
   Browser.prototype.remove_cookie = function (serverResponse, name) {
+    //TODO: add error control to check if the cookie was properly deleted
     this.currentPage.deleteCookie(name);
     phantom.deleteCookie(name);
     return this.serverSendResponse(true, serverResponse);
