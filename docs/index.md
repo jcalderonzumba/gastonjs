@@ -26,4 +26,4 @@ Everything will be installed inside `vendor` folder, as with any composer packag
 ## Special thanks
 None of this work would have been possible without the awesome work done by the [Poltergeist team](https://github.com/teampoltergeist/poltergeist).
 
-We fork their code and took it to another level, but the roots are stille there and we want to acknowledge that.
+We fork their code and took it to another level, but the roots are still there and we want to acknowledge that.

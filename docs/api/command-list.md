@@ -9,14 +9,14 @@ GastonJS API browser commands
 * attributes
 * body
 * browser_error
-* clear_cookies
+* [clear_cookies](commands/cookies/clear_cookies.md)  --> unit test
 * clear_network_traffic
 * click
 * click_coordinates
 * close_window
-* cookies
-* cookies_enabled
-* [current_url](commands/current_url.md) --> unit test
+* [cookies](commands/cookies/cookies.md)  --> unit test
+* [cookies_enabled](commands/cookies/cookies_enabled.md)  --> unit test
+* [current_url](commands/navigation/current_url.md) --> unit test
 * debug
 * delete_text
 * disabled
@@ -29,7 +29,7 @@ GastonJS API browser commands
 * find
 * find_within
 * [get_headers](commands/headers/get_headers.md) --> unit test
-* [go_back](commands/go_back.md)  --> unit test
+* [go_back](commands/navigation/go_back.md)  --> unit test
 * go_forward
 * hover
 * key_event
@@ -41,9 +41,9 @@ GastonJS API browser commands
 * parents
 * pop_frame
 * push_frame
-* [reload](commands/reload.md)  --> unit test
+* [reload](commands/navigation/reload.md)  --> unit test
 * remove_attribute
-* remove_cookie
+* [remove_cookie](commands/cookies/remove_cookie.md)  --> unit test
 * render
 * render_base64
 * reset
@@ -58,7 +58,7 @@ GastonJS API browser commands
 * set
 * set_attribute
 * set_clip_rect
-* set_cookie
+* [set_cookie](commands/cookies/set_cookie.md)  --> unit test
 * set_debug
 * [set_headers](commands/headers/set_headers.md)  --> unit test
 * set_http_auth
@@ -75,7 +75,7 @@ GastonJS API browser commands
 * value
 * visible
 * visible_text
-* [visit](commands/visit.md)  --> unit test
+* [visit](commands/navigation/visit.md)  --> unit test
 * window_handle
 * window_handles
 * window_name
