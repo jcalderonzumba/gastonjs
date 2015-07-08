@@ -11,8 +11,8 @@ GastonJS API browser commands
 * browser_error
 * [clear_cookies](commands/cookies/clear_cookies.md)  --> unit test
 * clear_network_traffic
-* click
-* click_coordinates
+* [click](commands/mouse/click.md)    --> NO unit test
+* [click_coordinates](commands/mouse/click.md) --> NO unit test
 * close_window
 * [cookies](commands/cookies/cookies.md)  --> unit test
 * [cookies_enabled](commands/cookies/cookies_enabled.md)  --> unit test
@@ -20,7 +20,7 @@ GastonJS API browser commands
 * debug
 * delete_text
 * disabled
-* double_click
+* [double_click](commands/mouse/double_click.md)    --> NO unit test
 * drag
 * equals
 * [evaluate](commands/javascript/evaluate.md) --> unit test
@@ -31,9 +31,9 @@ GastonJS API browser commands
 * [get_headers](commands/headers/get_headers.md) --> unit test
 * [go_back](commands/navigation/go_back.md)  --> unit test
 * go_forward
-* hover
+* [hover](commands/mouse/hover.md)    --> NO unit test
 * key_event
-* mouse_event
+* [mouse_event](commands/mouse/mouse_event.md)  --> NO PHP implementation
 * network_traffic
 * node
 * noop
