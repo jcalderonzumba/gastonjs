@@ -27,4 +27,11 @@ pages:
       - 'cookies_enabled': api/commands/cookies/cookies_enabled.md
       - 'remove_cookie': api/commands/cookies/remove_cookie.md
       - 'set_cookie': api/commands/cookies/set_cookie.md
+    - 'Mouse commands':
+        - 'click': api/commands/mouse/click.md
+        - 'right_click': api/commands/mouse/right_click.md
+        - 'hover': api/commands/mouse/hover.md
+        - 'double_click': api/commands/mouse/double_click.md
+        - 'click_coordinates': api/commands/mouse/click_coordinates.md
+        - 'mouse_event': api/commands/mouse/mouse_event.md
   - GastonJS PHP client: clients/php/index.md
