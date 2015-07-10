@@ -34,4 +34,7 @@ pages:
         - 'double_click': api/commands/mouse/double_click.md
         - 'click_coordinates': api/commands/mouse/click_coordinates.md
         - 'mouse_event': api/commands/mouse/mouse_event.md
+    - 'Render commands':
+        - 'render': api/commands/render/render.md
+        - 'render_base64': api/commands/render/render_base64.md
   - GastonJS PHP client: clients/php/index.md

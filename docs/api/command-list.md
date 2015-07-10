@@ -44,8 +44,8 @@ GastonJS API browser commands
 * [reload](commands/navigation/reload.md)  --> unit test
 * remove_attribute
 * [remove_cookie](commands/cookies/remove_cookie.md)  --> unit test
-* render
-* render_base64
+* [render](commands/render/render.md)   --> unit test
+* [render_base64](commands/render/render_base64.md)   --> unit test
 * reset
 * resize
 * [response_headers](commands/headers/response_headers.md) --> unit test
@@ -57,7 +57,6 @@ GastonJS API browser commands
 * send_keys
 * set
 * set_attribute
-* set_clip_rect
 * [set_cookie](commands/cookies/set_cookie.md)  --> unit test
 * set_debug
 * [set_headers](commands/headers/set_headers.md)  --> unit test
