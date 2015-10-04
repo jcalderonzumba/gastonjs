@@ -54,6 +54,16 @@ class BrowserCookiesTest extends BrowserCommandsTestCase {
     $this->assertArrayHasKey("mycookie", $this->browser->cookies());
   }
 
+  public function testSetCookieWithSemicolon() {
+    $cookie = array("name" => "mycookie", "value" => "simpletest217107;1443979275;5611600b7875f9.10349470;mDbNZYl4biS9JAGaPLizxz2tcMxIUA429gqcYaYxijM", "path" => "/", "domain" => "127.0.0.1");
+    $this->visitUrl($this->getTestPageBaseUrl() . "/static/basic.html");
+    $this->assertEmpty($this->browser->cookies());
+    $this->assertTrue($this->browser->setCookie($cookie));
+    $this->browser->reload();
+    $this->assertArrayHasKey("mycookie", $this->browser->cookies());
+    $this->assertEquals('simpletest217107;1443979275;5611600b7875f9.10349470;mDbNZYl4biS9JAGaPLizxz2tcMxIUA429gqcYaYxijM', $this->browser->cookies()['mycookie']->getValue());
+  }
+
   public function testCookiesDisabled() {
     $this->assertTrue($this->browser->cookiesEnabled(false));
     $this->visitUrl($this->getTestPageBaseUrl() . "/testCookiesAreNotEmpty/");
