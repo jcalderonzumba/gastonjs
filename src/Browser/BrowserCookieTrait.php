@@ -11,7 +11,8 @@ use Zumba\GastonJS\Cookie;
 trait BrowserCookieTrait {
   /**
    * Gets the cookies on the browser
-   * @return array
+   *
+   * @return Cookie[]
    */
   public function cookies() {
     $cookies = $this->command('cookies');
@@ -32,6 +33,7 @@ trait BrowserCookieTrait {
     if (isset($cookie["expires"])) {
       $cookie["expires"] = intval($cookie["expires"]) * 1000;
     }
+    $cookie['value'] = urlencode($cookie['value']);
     return $this->command('set_cookie', $cookie);
   }
 
