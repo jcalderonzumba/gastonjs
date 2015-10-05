@@ -27,8 +27,7 @@ class BrowserBase {
    */
   protected function createApiClient() {
     // Provide a BC switch between guzzle 5 and guzzle 6.
-    if (class_exists('GuzzleHttp\PSr7\Response'))
-    {
+    if (class_exists('GuzzleHttp\Psr7\Response')) {
       $this->apiClient = new Client(array("base_uri" => $this->getPhantomJSHost()));
     }
     else {
