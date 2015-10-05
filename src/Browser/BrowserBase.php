@@ -7,7 +7,6 @@ use Zumba\GastonJS\Exception\DeadClient;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\ServerException;
-use GuzzleHttp\Psr7\Response;
 
 /**
  * Class BrowserBase
@@ -27,7 +26,14 @@ class BrowserBase {
    *  Creates an http client to consume the phantomjs API
    */
   protected function createApiClient() {
-    $this->apiClient = new Client(array("base_uri" => $this->getPhantomJSHost()));
+    // Provide a BC switch between guzzle 5 and guzzle 6.
+    if (class_exists('GuzzleHttp\PSr7\Response'))
+    {
+      $this->apiClient = new Client(array("base_uri" => $this->getPhantomJSHost()));
+    }
+    else {
+      $this->apiClient = new Client(array("base_url" => $this->getPhantomJSHost()));
+    }
   }
 
   /**
@@ -79,7 +85,7 @@ class BrowserBase {
       $commandName = $args[0];
       array_shift($args);
       $messageToSend = json_encode(array('name' => $commandName, 'args' => $args));
-      /** @var $commandResponse  Response */
+      /** @var $commandResponse \GuzzleHttp\Psr7\Response|\GuzzleHttp\Message\Response */
       $commandResponse = $this->getApiClient()->post("/api", array("body" => $messageToSend));
       $jsonResponse = json_decode($commandResponse->getBody(), TRUE);
     } catch (ServerException $e) {
