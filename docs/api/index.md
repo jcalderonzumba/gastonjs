@@ -6,9 +6,11 @@ This statement can change in the future but that will require all clients to upg
 
 ##Start the Browser and the API
 ```bash
-phantomjs --ssl-protocol=any --ignore-ssl-errors=true vendor/jcalderonzumba/gastonjs/src/Client/main.js 8510 1024 768 2>&1 >> /tmp/gastonjs.log &
+phantomjs --ssl-protocol=any --ignore-ssl-errors=true vendor/jcalderonzumba/gastonjs/src/Client/main.js 8510 1024 768 false 2>&1 >> /tmp/gastonjs.log &
 ```
-This will start a phantomjs process and the API listening on the 8510 port, the 1024x768 parameters are the width and height you want the browser to use. You can start the API on the port you want 8510 is just an example.
+This will start a phantomjs process and the API listening on the 8510 port, the 1024x768 parameters are the width and
+height you want the browser to use. The "false" argument is about [JavaScript errors](commands/javascript/set_js_errors.md),
+if omitted it'll be "true" by default. You can start the API on the port you want, 8510 is just an example.
 
 ##API endpoint
 Your client can start making HTTP POST requests to `http://localhost:8510/v1/api`
