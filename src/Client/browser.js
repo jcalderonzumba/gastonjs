@@ -1239,6 +1239,21 @@ Poltergeist.Browser = (function () {
   };
 
   /**
+   * Sets the timeout in milliseconds, after which any resource requested will stop
+   * trying and proceed with other parts of the page
+   * @param serverResponse
+   * @param value
+   * @return {*}
+   */
+  Browser.prototype.set_resource_timeout = function (serverResponse, value) {
+    this.page._native.settings.resourceTimeout = value;
+    this.page._native.onResourceTimeout = function (request) {
+      this.debug('Response (#' + request.id + '): ' + JSON.stringify(request));
+    };
+    return this.serverSendResponse(true, serverResponse);
+  };
+
+  /**
    *  Sets the urlBlacklist for the given urls as parameters
    * @return {boolean}
    */
