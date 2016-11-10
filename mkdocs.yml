@@ -21,6 +21,7 @@ pages:
       - 'execute': api/commands/javascript/execute.md
       - 'evaluate': api/commands/javascript/evaluate.md
       - 'set_js_errors': api/commands/javascript/set_js_errors.md
+      - 'set_resource_timeout': api/commands/javascript/set_resource_timeout.md
     - 'Cookies commands' :
       - 'cookies': api/commands/cookies/cookies.md
       - 'clear_cookies': api/commands/cookies/clear_cookies.md
