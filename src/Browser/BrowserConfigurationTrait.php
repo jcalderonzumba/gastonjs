@@ -36,4 +36,14 @@ trait BrowserConfigurationTrait {
     return $this->command('set_debug', $this->debug);
   }
 
+  /**
+   * Set the timeout after which any resource requested will stop
+   * trying and proceed with other parts of the page
+   * @param int $resourceTimeout
+   * @return bool
+   */
+  public function resourceTimeout($resourceTimeout) {
+    return $this->command('set_resource_timeout', $resourceTimeout);
+  }
+
 }

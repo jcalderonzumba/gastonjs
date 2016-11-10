@@ -60,6 +60,7 @@ GastonJS API browser commands
 * [set_cookie](commands/cookies/set_cookie.md)  --> unit test
 * set_debug
 * [set_headers](commands/headers/set_headers.md)  --> unit test
+* [set_resource_timeout](commands/javascript/set_resource_timeout.md)  --> unit test
 * set_http_auth
 * [set_js_errors](commands/javascript/set_js_errors.md) --> NO unit test
 * set_paper_size

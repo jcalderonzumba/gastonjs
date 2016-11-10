@@ -54,6 +54,7 @@ set_cookie              --->  TESTED
 set_debug
 set_headers             --->  TESTED
 set_http_auth           --->  TESTED
+set_resource_timeout    --->  TESTED
 set_js_errors
 set_paper_size
 set_zoom_factor

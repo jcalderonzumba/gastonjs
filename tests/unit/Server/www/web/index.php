@@ -72,4 +72,10 @@ $app->post("/check-post-request/", function (Request $request) {
   $response->setContent($jsonResponse);
   return $response;
 });
+
+// Route used for loading resources test
+$app->match("delayed-resource", function () {
+  sleep(5);
+});
+
 $app->run();
