@@ -21,7 +21,7 @@ class BrowserLoadResourcesTest extends BrowserCommandsTestCase {
 
   public function testLoadResources() {
 
-    $this->browser->resourceTimeout(2000);
+    $this->browser->resourceTimeout(3500);
     $startTime = microtime(true);
     # visiting this url will simulate resource loading up to 5 seconds.
     # setting resourceTimeout allows us to proceed with other parts
@@ -29,7 +29,7 @@ class BrowserLoadResourcesTest extends BrowserCommandsTestCase {
     $this->visitUrl($this->getTestPageBaseUrl() . "/static/hang_resources.html");
     $finishTime = microtime(true);
     $visitTime = $finishTime - $startTime;
-    static::assertLessThan(3, $visitTime);
+    static::assertLessThan(4, $visitTime);
 
   }
 

@@ -28,6 +28,7 @@ Poltergeist.Browser = (function () {
     this.height = height || 768;
     this.pages = [];
     this.js_errors = (typeof jsErrors === 'boolean') ? jsErrors : true;
+    this._resourceTimeout = false;
     this._debug = false;
     this._counter = 0;
     this.resetPage();
@@ -198,6 +199,14 @@ Poltergeist.Browser = (function () {
     var prevUrl;
     var self = this;
     this.currentPage.state = 'loading';
+
+    if (this._resourceTimeout) {
+      this.currentPage._native.settings.resourceTimeout = this._resourceTimeout;
+      this.currentPage._native.onResourceTimeout = function (request) {
+        console.log('Response (#' + request.id + '): ' + JSON.stringify(request));
+      };
+    }
+
     prevUrl = this.currentPage.source === null ? 'about:blank' : this.currentPage.currentUrl();
     this.currentPage.open(url);
     if (/#/.test(url) && prevUrl.split('#')[0] === url.split('#')[0]) {
@@ -1246,10 +1255,7 @@ Poltergeist.Browser = (function () {
    * @return {*}
    */
   Browser.prototype.set_resource_timeout = function (serverResponse, value) {
-    this.page._native.settings.resourceTimeout = value;
-    this.page._native.onResourceTimeout = function (request) {
-      this.debug('Response (#' + request.id + '): ' + JSON.stringify(request));
-    };
+    this._resourceTimeout = value;
     return this.serverSendResponse(true, serverResponse);
   };
 
