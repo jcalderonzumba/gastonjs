@@ -1163,6 +1163,21 @@ Poltergeist.Browser = (function () {
   };
 
   /**
+   * Sets proxy
+   * @param serverResponse
+   * @param ip
+   * @param port
+   * @param proxyType
+   * @param user
+   * @param password
+   * @return {*}
+   */
+  Browser.prototype.set_proxy = function (serverResponse, ip, port, proxyType, user, password) {
+    phantom.setProxy(ip, port, proxyType, user, password);
+    return this.serverSendResponse(true, serverResponse);
+  };
+
+  /**
    * US19: DONE
    * Sets a basic authentication credential to access a page
    * THIS SHOULD BE USED BEFORE accessing a page
