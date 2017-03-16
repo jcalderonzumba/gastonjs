@@ -1163,14 +1163,15 @@ Poltergeist.Browser = (function () {
   };
 
   /**
-   * Sets proxy
-   * @param serverResponse
-   * @param ip
-   * @param port
-   * @param proxyType
-   * @param user
-   * @param password
+   * Sets proxy or unsets web proxy
+   * @param {Object} serverResponse Phantomjs response object associated to the client request
+   * @param {String} ip             IP or host name, or null/'' to unset
+   * @param {Number} port           port number
+   * @param {String} proxyType      socks5 or anything else for http(s)
+   * @param {String} user           optional username for proxy authentication
+   * @param {String} password       optional password for proxy authentication
    * @return {*}
+   * @see {@link https://github.com/ariya/phantomjs/pull/11829/commits/84c31822a2e5eba21fe42298ec27ec4ccab95667}
    */
   Browser.prototype.set_proxy = function (serverResponse, ip, port, proxyType, user, password) {
     phantom.setProxy(ip, port, proxyType, user, password);
