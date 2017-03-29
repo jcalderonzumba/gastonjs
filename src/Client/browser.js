@@ -719,6 +719,7 @@ Poltergeist.Browser = (function () {
 
   /**
    * Closes the window given by handle name if possible
+   * NOTE: Closing a page in PhantomJS also closes new windows/frames opened from that page (QWebPage behaviour)
    * @param serverResponse
    * @param handle
    * @return {*}
