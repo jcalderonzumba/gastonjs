@@ -83,7 +83,7 @@ Poltergeist.Browser = (function () {
    * @param {Poltergeist.WebPage} page
    */
   Browser.prototype.unregisterPage = function (page) {
-    if ('handle' in page)
+    if (('handle' in page) && (page.handle !== null))
     {
       for (var i = this.pages.length; i--;) {
         if (page === this.pages[i]) {
@@ -91,7 +91,7 @@ Poltergeist.Browser = (function () {
           break;
         }
       }
-      delete page.handle;
+      page.handle = null;
     }
   };
 
