@@ -36,7 +36,6 @@ Poltergeist.Browser = (function () {
 
   /**
    * Resets the browser to a clean slate
-   * @return {Function}
    */
   Browser.prototype.resetPage = function () {
     var _ref;
@@ -56,20 +55,44 @@ Poltergeist.Browser = (function () {
       phantom.clearCookies();
     }
 
-    this.page = this.currentPage = new Poltergeist.WebPage;
+    this.page = this.currentPage = new Poltergeist.WebPage(null, this);
     this.page.setViewportSize({
       width: this.width,
       height: this.height
     });
-    this.page.handle = "" + (this._counter++);
-    this.pages.push(this.page);
+  };
 
-    return this.page.onPageCreated = function (newPage) {
-      var page;
-      page = new Poltergeist.WebPage(newPage);
-      page.handle = "" + (self._counter++);
-      return self.pages.push(page);
-    };
+  /**
+   * Adds given newly opened Poltergeist.WebPage to the list of available windows/frames
+   * consulted by methods getPageByHandle, window_handle, window_handles, switch_to_window and close_window.
+   *
+   * @param {WebPage} page
+   */
+  Browser.prototype.registerPage = function (page) {
+    if (!('handle' in page))
+    {
+      page.handle = "" + (this._counter++);
+      this.pages.push(page);
+    }
+  };
+
+  /**
+   * Removes given closed Poltergeist.WebPage from the list of available windows/frames
+   * consulted by methods getPageByHandle, window_handle, window_handles, switch_to_window and close_window.
+   *
+   * @param {Poltergeist.WebPage} page
+   */
+  Browser.prototype.unregisterPage = function (page) {
+    if (('handle' in page) && (page.handle !== null))
+    {
+      for (var i = this.pages.length; i--;) {
+        if (page === this.pages[i]) {
+          this.pages.splice(i,1);
+          break;
+        }
+      }
+      page.handle = null;
+    }
   };
 
   /**
@@ -696,6 +719,7 @@ Poltergeist.Browser = (function () {
 
   /**
    * Closes the window given by handle name if possible
+   * NOTE: Closing a page in PhantomJS also closes new windows/frames opened from that page (QWebPage behaviour)
    * @param serverResponse
    * @param handle
    * @return {*}
